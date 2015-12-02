@@ -8,6 +8,10 @@ var PinSchema = new Schema({
   name: { type: String, required: true },
   info: String,
   author: { type: Schema.Types.ObjectId, ref: 'User' },
+  activity: {
+    type: String,
+    enum: ['entertainment', 'food & drink', 'nightlife', 'underground']
+  }
   location: {
   	type: { type: String, default: 'Point' },
   	coordinates: { type: [Number] }
