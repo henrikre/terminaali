@@ -11,7 +11,7 @@ var PinSchema = new Schema({
   activity: {
     type: String,
     enum: ['entertainment', 'food & drink', 'nightlife', 'underground']
-  }
+  },
   location: {
   	type: { type: String, default: 'Point' },
   	coordinates: { type: [Number] }
