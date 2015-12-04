@@ -16,7 +16,10 @@ And needs to be posted to:
 POST /auth/local
 ```
 
-The server will return a JSON web token that needs to be included in requests.
+The server will return a JSON web token that needs to be included in the **Authorization** header of the request. The token adheres to the JWT standard and needs to be in the following format:
+```
+"Authorization": "Bearer myverylongtoken"
+```
 
 ### List map pins
 
@@ -31,3 +34,4 @@ Create a new pin (requires authentication)
 ```
 POST /api/pins
 ```
+
