@@ -47,6 +47,7 @@ exports.show = function(req, res) {
 
 // Creates a new pin in the DB.
 exports.create = function(req, res) {
+  req.body.author = req.user._id;
   Pin.create(req.body, function(err, pin) {
     if(err) { return handleError(res, err); }
     return res.status(201).json(pin);
