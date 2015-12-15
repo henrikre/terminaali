@@ -1,0 +1,65 @@
+<!-- <a href="#" class="menu-btn" ng-click="toggleMenu()">Menu</a>
+<menu></menu>
+<ui-gmap-google-map
+  center='map.center'
+  zoom='map.zoom'
+  options='map.options'>
+  <ui-gmap-markers
+    models="pins"
+    idkey="'_id'"
+    labelAnchor="22 0"
+    labelContent="'name'"
+    coords="'location'"
+    icon="'icon'">
+  </ui-gmap-markers>
+</ui-gmap-google-map> -->
+<div class="overlay overlay-hugeinc" ng-class="{ open: menuVisible }">
+  <nav ng-hide="submenuVisible === true">
+    <h3>Pins</h3>
+    <ul>
+      <li><a href="#">Add a new pin</a></li>
+      <li><a href="#" ng-click="toggleSubmenu()">Sort pins</a></li>
+    </ul>
+  </nav>
+  <nav ng-show="submenuVisible === true">
+    <h3>Sort by activities</h3>
+    <ul>
+      <li>
+        <label>
+          <input type="checkbox" name="checkbox" ng-click="console()" ng-model="activity.entertainment">
+          Entertainment
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="checkbox" ng-model="activity.foodanddrink">
+          Food & Drink
+        </label>
+      </li>
+      <li><a href="#" ng-click="pinFilter.activity = 'entertainment';">Entertainment</a></li>
+      <li><a href="#">Food & Drink</a></li>
+      <li><a href="#">Nightlife</a></li>
+      <li><a href="#">Underground</a></li>
+    </ul>
+  </nav>
+</div>
+<button type="button" class="btn-menu" ng-click="toggleMenu()">
+  <i class="fa fa-bars" ng-show="menuVisible === false"></i>
+  <i class="fa fa-times fa--white" ng-show="menuVisible === true"></i>
+</button>
+<ui-gmap-google-map
+  data-tap-disabled="true"
+  center='map.center'
+  zoom='map.zoom'
+  options='map.options'>
+  <ui-gmap-markers
+    models="filteredPins"
+    idkey="'_id'"
+    doCluster="false"
+    labelAnchor="22 0"
+    labelContent="'name'"
+    coords="'location'"
+    events='map.markerEvents'
+    icon="'icon'">
+  </ui-gmap-markers>
+</ui-gmap-google-map>
