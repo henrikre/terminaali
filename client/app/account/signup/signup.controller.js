@@ -16,7 +16,7 @@ angular.module('terminaaliApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+          $location.path('/map');
         })
         .catch( function(err) {
           err = err.data;

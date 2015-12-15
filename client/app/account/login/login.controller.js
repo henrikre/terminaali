@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('terminaaliApp')
-  .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
+  .controller('LoginCtrl', function ($scope, $location, Auth) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -15,15 +15,11 @@ angular.module('terminaaliApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/');
+          $location.path('/map');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
         });
       }
-    };
-
-    $scope.loginOauth = function(provider) {
-      $window.location.href = '/auth/' + provider;
     };
   });

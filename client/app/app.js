@@ -5,12 +5,14 @@ angular.module('terminaaliApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ngAnimate',
+  'ui.bootstrap',
+  'uiGmapgoogle-maps'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/main'
       });
 
     $locationProvider.html5Mode(true);
@@ -43,7 +45,7 @@ angular.module('terminaaliApp', [
     };
   })
 
-  .run(function ($rootScope, $location, Auth) {
+  .run(function ($rootScope, $location, $timeout, $window, Auth) {
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {
