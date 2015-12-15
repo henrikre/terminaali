@@ -54,7 +54,7 @@ User.find({}).remove(function() {
       Pin.create({
         name: 'Eteläsatama',
         info: 'The largest port in Helsinki.',
-        activity: 'entertainment',
+        activity: ['entertainment'],
         location: {
           type: 'Point',
           coordinates: [24.958802635582064,60.16075728592842]
@@ -62,7 +62,7 @@ User.find({}).remove(function() {
       }, {
         name: 'Esplanadi',
         info: 'A small park in the very heart of Helsinki.',
-        activity: 'food & drink',
+        activity: ['food & drink'],
         location: {
           type: 'Point',
           coordinates: [24.947586635582063,60.16759576206797]

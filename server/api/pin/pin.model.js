@@ -9,7 +9,7 @@ var PinSchema = new Schema({
   info: String,
   author: { type: Schema.Types.ObjectId, ref: 'User' },
   activity: {
-    type: String,
+    type: Array,
     enum: ['entertainment', 'food & drink', 'nightlife', 'underground']
   },
   location: {
